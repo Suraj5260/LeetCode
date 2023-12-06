@@ -11,26 +11,13 @@ class Solution {
             return ch;
         }
         else{
-            char t = ch - 'A' + 'a';
-            return t;
+            ch = ch - 'A' + 'a';
+            return ch;
         }
     }
-    bool finalAns(string t){
+    // bool finalAns(string t){
 
-        int a = 0;
-        int b = t.length() - 1;
-
-        while(a <= b){
-            if(t[a] != t[b]){
-                return 0;
-            }
-            else{
-                a++;
-                b--;
-            }
-        }
-        return 1;
-    }
+    // }
 public:
     bool isPalindrome(string s) {
         
@@ -44,10 +31,22 @@ public:
         }
 
         // convert to lower
-        for(int j = 0; j < temp.length(); j++){
-            temp[j] = toLower(temp[j]);
-        }
+        // for(int j = 0; j < temp.length(); j++){
+        //     temp[j] = toLower(temp[j]);
+        // }
 
-        return finalAns(temp);
+        int a = 0;
+        int b = temp.length() - 1;
+
+        while(a <= b){
+            if(toLower(temp[a]) != toLower(temp[b])){
+                return 0;
+            }
+            else{
+                a++;
+                b--;
+            }
+        }
+        return 1;
     }
 };
